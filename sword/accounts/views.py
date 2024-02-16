@@ -47,9 +47,11 @@ def login_view(request):
         if form.is_valid():
             user = form.get_user()
             login(request, user)
+            messages.success(request, 'You are now logged in')
             return redirect('dashboard')
     else:
         form = LoginForm()
+        messages.error(request, 'Invalid username or password.')
     return render(request, 'accounts/login.html', {'form': form})
 
 def logout_view(request):
