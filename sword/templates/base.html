@@ -752,12 +752,14 @@
 					<div class="bee-block bee-block-1 bee-menu">
 						<nav class="bee-menu"><input class="bee-hamburger-trigger" id="bee-hamburger-memu-r0c1m0" type="checkbox" /><label class="bee-hamburger-controls" for="bee-hamburger-memu-r0c1m0"><span class="bee-hamburger-open"></span><span class="bee-hamburger-close"></span></label>
 							<ul class="bee-horizontal with-bee-hamburger">
-								<li>{% if request.user.is_authenticated %}
-                                    <a href="{% url 'logout' %}" class="nav-link">Logout</a>
-                                {% else %}
-                                    <a href="{% url 'login' %}" class="nav-link">Login</a>
-                                {% endif %}
-                                </li>
+                                <li>
+                                    {% if request.user.is_authenticated %}
+                                        <a href="{% url 'logout' %}" class="nav-link">Logout</a>
+                                    {% else %}
+                                        <a href="{% url 'signup' %}" class="btn btn-primary">Sign Up</a> |
+                                        <a href="{% url 'login' %}" class="nav-link">Login</a>
+                                    {% endif %} 
+                                  </li>                                  
 								<li><a href="www.example.com" target="_self" title="">Find Job</a></li>
 								<li><a href="www.example.com" target="_self" title="">Post a Job</a></li>
 							</ul>
@@ -817,15 +819,15 @@
 					<div class="bee-block bee-block-2 bee-paragraph">
 						<p style="word-break:break-word;">UK (+23) 456 7890 <br />US (+22) 456 7891</p>
 						<p style="word-break:break-word;"> </p>
-						<p style="word-break:break-word;">support@domain.com <br />sales@domain.com</p>
+						<p style="word-break:break-word;">support@tergym.com <br />sales@tergym.com</p>
 					</div>
 				</div>
 				<div class="bee-col bee-col-4 bee-col-w3">
 					<div class="bee-block bee-block-1 bee-paragraph">
-						<p style="word-break:break-word;"><strong>Company Name</strong></p>
+						<p style="word-break:break-word;"><strong>Tergym</strong></p>
 					</div>
 					<div class="bee-block bee-block-2 bee-paragraph">
-						<p style="word-break:break-word;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sed </p>
+						<p style="word-break:break-word;">Think Tech, Think Different </p>
 					</div>
 					<div class="bee-block bee-block-3 bee-social">
 						<div class="content"><span class="icon" style="padding:0 2.5px 0 2.5px;"><a href="https://www.facebook.com" target="_self"><img alt="Facebook" src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/t-only-logo-white/facebook@2x.png" title="Facebook" /></a></span><span class="icon" style="padding:0 2.5px 0 2.5px;"><a href="https://www.twitter.com" target="_self"><img alt="Twitter" src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/t-only-logo-white/twitter@2x.png" title="Twitter" /></a></span><span class="icon" style="padding:0 2.5px 0 2.5px;"><a href="https://www.instagram.com" target="_self"><img alt="Instagram" src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/t-only-logo-white/instagram@2x.png" title="Instagram" /></a></span><span class="icon" style="padding:0 2.5px 0 2.5px;"><a href="https://www.linkedin.com" target="_self"><img alt="LinkedIn" src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/t-only-logo-white/linkedin@2x.png" title="LinkedIn" /></a></span></div>
