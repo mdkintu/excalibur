@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
 from .forms import SignUpForm, LoginForm
+from django.contrib.auth.decorators import login_required
 
 def user_login(request):
     if request.method == 'POST':
@@ -27,6 +28,7 @@ def signup(request):
         form = SignUpForm()
     return render(request, 'accounts/signup.html', {'form': form})
 
+# this view didnt have a form to login
 # def login_view(request):
 #     if request.method == 'POST':
 #         username = request.POST.get('username')
@@ -45,7 +47,7 @@ def login_view(request):
         if form.is_valid():
             user = form.get_user()
             login(request, user)
-            return redirect('index')
+            return redirect('dashboard')
     else:
         form = LoginForm()
     return render(request, 'accounts/login.html', {'form': form})
@@ -53,3 +55,7 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     return redirect('index')
+
+@login_required(login_url='login')  # Ensure user is logged in
+def dashboard(request):
+    return render(request, 'accounts/dashboard.html')
