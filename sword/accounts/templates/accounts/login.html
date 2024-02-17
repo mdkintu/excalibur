@@ -1,34 +1,259 @@
 <!DOCTYPE html>
-<!-- <form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }} 
-    <button type="submit">Login</button>
-</form> -->
+<html>
 
+<head>
+	<title></title>
+	<meta content="summary_large_image" name="twitter:card" />
+	<meta content="website" property="og:type" />
+	<meta content="" property="og:description" />
+	<meta content="https://l2ql34s8ss.preview-posted-stuff.com/V2-ZxG9m-gC08-PmsB-5mi3/" property="og:url" />
+	<meta content="https://pro-bee-beepro-thumbnail.getbee.io/messages/1146807/1132469/2106201/10656222_large.jpg" property="og:image" />
+	<meta content="" property="og:title" />
+	<meta content="" name="description" />
+	<meta charset="utf-8" />
+	<meta content="width=device-width" name="viewport" />
+	<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface:wght@100;200;300;400;500;600;700;800;900" rel="stylesheet" type="text/css" />
+	<style>
+		.bee-row,
+		.bee-row-content {
+			position: relative
+		}
 
-<h2>Login</h2>
-{% if messages %}  
-    <div class="container"> 
-        {% for message in messages %}
-            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
-                {{ message }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-         {% endfor %}
-    </div>
-{% endif %}
-<script>
-  // Make sure you have included jQuery, otherwise adapt to vanilla JavaScript
-  $(document).ready(function() {
-      setTimeout(function() {
-          $('.alert').alert('close'); // Close bootstrap alerts 
-      }, 5000); // 5 seconds
-  });
-</script>
+		.bee-form .bee-form-row .bee-field button {
+			font-size: inherit;
+			font-family: inherit
+		}
 
+		.bee-row-1,
+		.bee-row-1 .bee-row-content {
+			background-repeat: no-repeat
+		}
 
-<form method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit" class="btn btn-primary">Login</button>
-</form>
+		body {
+			background-color: #004A77;
+			color: #000000;
+			font-family: Arial, Helvetica, sans-serif
+		}
+
+		a {
+			color: #7747FF
+		}
+
+		* {
+			box-sizing: border-box
+		}
+
+		body {
+			margin: 0
+		}
+
+		.bee-row-content {
+			max-width: 1280px;
+			margin: 0 auto;
+			display: flex
+		}
+
+		.bee-row-content .bee-col-w12 {
+			flex-basis: 100%
+		}
+
+		.bee-row-1 .bee-col-1 .bee-block-2 .bee-button-container {
+			text-align: center
+		}
+
+		.bee-row-1 .bee-col-1 .bee-block-2 .bee-form-row:not(.bee-sidelabel) input:not([type=checkbox]):not([type=radio]) {
+			width: 100%
+		}
+
+		.bee-form .bee-form-row .bee-field {
+			padding: 3px;
+			display: flex;
+			flex: 1;
+			flex-wrap: wrap;
+			align-items: center
+		}
+
+		.bee-form .bee-form-row .bee-field input:not([type=checkbox]):not([type=radio]) {
+			flex-grow: 1;
+			font-family: inherit;
+			font-size: inherit
+		}
+
+		.bee-form .bee-form-row .bee-field .bee-button-container {
+			flex-grow: 1
+		}
+
+		.bee-icon {
+			display: inline-block;
+			vertical-align: middle
+		}
+
+		.bee-icon .bee-content {
+			display: flex;
+			align-items: center
+		}
+
+		.bee-social .icon img {
+			max-height: 32px
+		}
+
+		@media (max-width:768px) {
+			.bee-form form {
+				width: 100% !important
+			}
+
+			.bee-row-content:not(.no_stack) {
+				display: block
+			}
+		}
+
+		.bee-row-1 .bee-row-content {
+			color: #000000
+		}
+
+		.bee-row-1 .bee-col-1 {
+			padding-bottom: 5px;
+			padding-top: 5px
+		}
+
+		.bee-row-1 .bee-col-1 .bee-block-1 {
+			color: #000000;
+			font-family: inherit;
+			font-size: 14px;
+			font-weight: 400;
+			text-align: center
+		}
+
+		.bee-row-1 .bee-col-1 .bee-block-2 {
+			font-family: 'Abril Fatface', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+			font-size: 16px;
+			font-weight: 400;
+			padding: 10px;
+			text-align: center
+		}
+
+		.bee-row-1 .bee-col-1 .bee-block-3 {
+			padding: 10px;
+			text-align: center
+		}
+
+		.bee-row-1 .bee-col-1 .bee-block-1 .bee-icon-image {
+			padding: 5px
+		}
+
+		.bee-row-1 .bee-col-1 .bee-block-1 .bee-icon:not(.bee-icon-first) .bee-content {
+			margin-left: 0
+		}
+
+		.bee-row-1 .bee-col-1 .bee-block-1 .bee-icon::not(.bee-icon-last) .bee-content {
+			margin-right: 0
+		}
+
+		.bee-row-1 .bee-col-1 .bee-block-2 form {
+			display: inline-block;
+			width: 50%
+		}
+
+		.bee-row-1 .bee-col-1 .bee-block-2 div.label,
+		.bee-row-1 .bee-col-1 .bee-block-2 label {
+			color: #7747ff;
+			letter-spacing: 1px;
+			line-height: 200%;
+			min-width: 100%;
+			text-align: left;
+			display: inline-block;
+			flex-grow: 0
+		}
+
+		.bee-row-1 .bee-col-1 .bee-block-2 ::-webkit-input-placeholder {
+			color: #000000
+		}
+
+		.bee-row-1 .bee-col-1 .bee-block-2 :-moz-placeholder {
+			color: #000000
+		}
+
+		.bee-row-1 .bee-col-1 .bee-block-2 ::-moz-placeholder {
+			color: #000000
+		}
+
+		.bee-row-1 .bee-col-1 .bee-block-2 :-ms-input-placeholder {
+			color: #000000
+		}
+
+		.bee-row-1 .bee-col-1 .bee-block-2 .bee-field>label:first-child,
+		.bee-row-1 .bee-col-1 .bee-block-2 div.label {
+			padding: 3px
+		}
+
+		.bee-row-1 .bee-col-1 .bee-block-2 input:not([type=checkbox]):not([type=radio]):not([type=image]) {
+			background-color: #ffffff;
+			border-bottom: 1px dotted transparent;
+			border-left: 1px dotted transparent;
+			border-radius: 4px;
+			border-right: 1px dotted transparent;
+			border-top: 1px dotted transparent;
+			color: #000000;
+			padding: 5px;
+			min-height: 42px
+		}
+
+		.bee-row-1 .bee-col-1 .bee-block-2 input:not([type=checkbox]):not([type=radio]):focus {
+			outline-color: #7747FF
+		}
+
+		.bee-row-1 .bee-col-1 .bee-block-2 button {
+			background-color: #7747FF;
+			border-bottom: 0 solid transparent;
+			border-left: 0 solid transparent;
+			border-radius: 4px;
+			border-right: 0px solid transparent;
+			border-top: 0 solid transparent;
+			color: #ffffff;
+			letter-spacing: 1px;
+			line-height: 200%;
+			padding: 5px 20px;
+			width: 30%
+		}
+	</style>
+</head>
+
+<body>
+	<div class="bee-page-container">
+		<div class="bee-row bee-row-1">
+			<div class="bee-row-content">
+				<div class="bee-col bee-col-1 bee-col-w12">
+					<div class="bee-block bee-block-1 bee-icons">
+						<div class="bee-icon bee-icon-last">
+							<div class="bee-content">
+								<div class="bee-icon-image"><img height="128px" src="https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/BeeProAgency/1146807_1132469/tergym-high-resolution-logo-black-transparent%20%281%29.png" width="auto" /></div>
+							</div>
+						</div>
+					</div>
+					<div class="bee-block bee-block-2 bee-form">
+						<form accept-charset="UTF-8" action="{% url 'login' %}" autocomplete="on" enctype="multipart/form-data" method="post" target="_self">
+              {% csrf_token %}
+							<div class="bee-form-row bee-sidelabel">
+								<div class="bee-field bee-field-r0c0m1i2"><label for="r0c0m1i2">Username</label><input id="r0c0m1i2" name="username" placeholder="Doe" required="" type="text" /></div>
+							</div>
+							<div class="bee-form-row bee-sidelabel">
+								<div class="bee-field bee-field-r0c0m1i3"><label for="r0c0m1i3">Password</label><input id="r0c0m1i3" name="password" placeholder="**************" required="" type="password" /></div>
+							</div>
+							<div class="bee-form-row bee-sidelabel">
+								<div class="bee-field bee-field-r0c0m1i5">
+									<div class="bee-button-container"><button id="r0c0m1i5" name="submit" type="submit" value="LOG IN">LOG IN</button></div>
+								</div>
+							</div>
+						</form>
+					</div>
+          <div class="bee-block bee-block-3 bee-form">Don't have an account? <a href="{% url 'signup' %}">Sign Up</a></div>
+					<div class="bee-block bee-block-3 bee-social">
+						<div class="content"><span class="icon" style="padding:0 10px 0 10px;"><a href="https://www.facebook.com/" target="_self"><img alt="Facebook" src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/circle-color/facebook@2x.png" title="facebook" /></a></span><span class="icon" style="padding:0 10px 0 10px;"><a href="https://www.twitter.com/" target="_self"><img alt="Twitter" src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/circle-color/twitter@2x.png" title="twitter" /></a></span><span class="icon" style="padding:0 10px 0 10px;"><a href="https://www.linkedin.com/" target="_self"><img alt="Linkedin" src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/circle-color/linkedin@2x.png" title="linkedin" /></a></span><span class="icon" style="padding:0 10px 0 10px;"><a href="https://www.instagram.com/" target="_self"><img alt="Instagram" src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/circle-color/instagram@2x.png" title="instagram" /></a></span></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
