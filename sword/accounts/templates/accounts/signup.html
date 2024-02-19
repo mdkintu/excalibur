@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 
-<form method="POST">
+<!-- <form method="POST">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Sign Up</button>
 	<p>Already have an account? <a href="{% url 'login' %}">Log In</a></p>
-</form>
+</form> -->
 <!DOCTYPE html>
 <html>
 
@@ -280,21 +280,33 @@
 					<div class="bee-block bee-block-2 bee-form">
 						<form accept-charset="UTF-8" action="{% url 'signup' %}" autocomplete="on" enctype="multipart/form-data" method="post" target="_self">
 							{% csrf_token %}
+
+							{% for field in form %}
 							<div class="bee-form-row">
-								<div class="bee-field bee-field-r0c0m1i1"><label for="r0c0m1i1">Name</label><input id="r0c0m1i1" name="firstname" placeholder="Nsangi MD" required="" type="text" /></div>
+								<label for="r0c0m1i1">{{field.label}}</label>{{field}}
+								<!-- {% if field.help_text %}
+							<small>{{ field.help_text }}</small>
+							{% endif %} -->
+
+							{% for error in field.errors %}
+							<p style="color:#B94A48;">{{error}}</p>
+							{% endfor %}
 							</div>
-							<div class="bee-form-row">
-								<div class="bee-field bee-field-r0c0m1i2"><label for="r0c0m1i2">Email</label><input id="r0c0m1i2" name="lastname" placeholder="nsangimd@ngw.com" required="" type="email" /></div>
+
+							{% endfor %}
+							
+							<!-- <div class="bee-form-row">
+								<div class="bee-field bee-field-r0c0m1i1"><label for="r0c0m1i1">Email</label><input id="r0c0m1i1" name="email" placeholder="nsangimd@ngw.com" required="" type="email" /></div>
 							</div>
 							<div class="bee-form-row">
 								<div class="bee-field bee-field-r0c0m1i3"><label for="r0c0m1i3">Username</label><input id="r0c0m1i3" name="username" placeholder="Nsangi" required="" type="text" /></div>
 							</div>
 							<div class="bee-form-row">
-								<div class="bee-field bee-field-r0c0m1i4"><label for="r0c0m1i4">Password</label><input id="r0c0m1i4" name="password1" placeholder="********" required="" type="password" /></div>
+								<div class="bee-field bee-field-r0c0m1i4"><label for="r0c0m1i4">Password</label><input id="r0c0m1i4" name="password1" placeholder="********" required="" type="password1" /></div>
 							</div>
 							<div class="bee-form-row">
-								<div class="bee-field bee-field-r0c0m1i5"><label for="r0c0m1i5">Repeat Password</label><input id="r0c0m1i5" name="password2" placeholder="********" required="" type="password" /></div>
-							</div>
+								<div class="bee-field bee-field-r0c0m1i5"><label for="r0c0m1i5">Repeat Password</label><input id="r0c0m1i5" name="password2" placeholder="********" required="" type="password2" /></div>
+							</div> -->
 							<div class="bee-form-row">
 								<div class="bee-field bee-field-r0c0m1i6 bee-inline-field"><span class="bee-form-option-wrapper"><input id="r0c0m1i6" name="privacy_policy" required="" type="checkbox" /><label class="inline" for="r0c0m1i6">I agree to the <a href="https://your_privacy_url">Privacy Policy</a></label></span></div>
 							</div>

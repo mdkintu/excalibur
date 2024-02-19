@@ -13,6 +13,8 @@
 	<meta charset="utf-8" />
 	<meta content="width=device-width" name="viewport" />
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900" rel="stylesheet" type="text/css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	
 	<style>
 		.bee-row,
 		.bee-row-content {
@@ -716,17 +718,46 @@
 			padding-top: 15px;
 			text-align: center
 		}
+
+		/*
+ *Add default styling for messages.
+ */
+.message {
+	border-radius: 10px;
+	box-shadow: 3px 3px 4px 0px rgba(50, 50, 50, 0.75);
+	color: white;
+	margin-bottom: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	text-align: center;
+	width: 20%;
+}
+/*
+ * Give the various message types the correct colors
+ */
+.message.success {
+	background-color: #249A41;
+}
+
+.message.error {
+	background-color: red;
+}
+.message.info {
+	background-color: rgb(128, 119, 176);
+}
 	</style>
-</head>
 
 <body>
 
-    {% if messages %}  
-    <ul class="messages"> 
-        {% for message in messages %}
-            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-         {% endfor %}
-    </ul>
+	<!-- Insert the following where you'd like the messages to appear in your base template. -->
+{% if messages %}
+<div class="messages">
+	{% for message in messages %}
+	<p class="message {{ message.tags }}">{{ message }}</p>
+	{% endfor %}
+</div>
 {% endif %}
 
 	<div class="bee-page-container">
@@ -758,6 +789,7 @@
 				</div>
 			</div>
 		</div>
+
 		{% block content %}
         {% endblock %}
 		<div class="bee-row bee-row-10">
@@ -811,7 +843,7 @@
 				</div>
 				<div class="bee-col bee-col-4 bee-col-w3">
 					<div class="bee-block bee-block-1 bee-paragraph">
-						<p style="word-break:break-word;"><strong>Tergym</strong></p>
+						<p style="word-break:break-word;"><strong>TerGym</strong></p>
 					</div>
 					<div class="bee-block bee-block-2 bee-paragraph">
 						<p style="word-break:break-word;">Think Tech, Think Different </p>
@@ -833,5 +865,10 @@
 		</div>
 	</div>
 </body>
+<!-- if you'd like the messages to disappear after a little bit, add the following javascript. Requires JQuery -->
+<script>
+	$('.message').hide().fadeIn(500).delay(2000).fadeOut(500);  
+	</script>
+
 
 </html>

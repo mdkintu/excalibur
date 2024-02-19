@@ -11,10 +11,16 @@ class SignUpForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ('first_name', 'email', 'password1', 'password2')
+        fields = ('first_name', 'email','username', 'password1', 'password2')
         labels={
-            'first_name':('First Name')
+            'first_name':('Name'),
         }
+
+    def __init__(self, *args, **kwargs):
+        super(SignUpForm, self).__init__(*args, **kwargs)
+
+        for name, field in self.fields.items():
+            field.widget.attrs.update({'class':'input'})
 
 class LoginForm(AuthenticationForm):
     username = forms.CharField(label='Username', max_length=30,

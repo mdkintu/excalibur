@@ -35,18 +35,23 @@ def login_view(request):
     if request.user.is_authenticated:
         return redirect('dashboard')
     if request.method == 'POST':
+        username=request.POST['username']
+        password=request.POST['password']
         form = LoginForm(data=request.POST, request=request)
         if form.is_valid():
             user = form.get_user()
             login(request, user)
-            messages.success(request, 'You are now logged in')
+            messages.info(request, 'You are now logged in')
             return redirect('dashboard')
+        else:
+            messages.error(request, 'Invalid username or password.')
+            form = LoginForm()
     else:
         form = LoginForm()
-        messages.error(request, 'Invalid username or password.')
     return render(request, 'accounts/login.html', {'form': form})
 
 def logout_view(request):
+    
     logout(request)
     messages.success(request, 'Logged out successfully')
     return redirect('index')

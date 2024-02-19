@@ -13,3 +13,4 @@ class CustomUser(models.Model):
         blank=True,
         related_name="custom_users"  # Change here
     )
+
