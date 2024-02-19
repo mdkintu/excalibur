@@ -3,6 +3,7 @@ from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
 from .forms import SignUpForm, LoginForm
 from django.contrib.auth.decorators import login_required
+from .models import Profile
 
 # Create your views here.
 def signup(request):
@@ -67,3 +68,22 @@ def post_job(request):
 @login_required(login_url='login')  # Ensure user is logged in
 def inbox_new(request):
     return HttpResponse('This is the new messages View')
+
+@login_required
+def view_profile(request):
+    profile = request.user.profile
+    context = {'profile': profile}
+    return render(request, 'accounts/view_profile.html', context)
+
+@login_required
+def update_profile(request):
+    if request.method == 'POST':
+        # Process form data to update profile (we'll cover the form soon)
+        profile = request.user.profile 
+        # ... update profile fields ...
+        profile.save()
+        return redirect('view_profile')  # Redirect to view profile after update
+    else:  # GET request
+        profile = request.user.profile
+        context = {'profile': profile}
+        return render(request, 'accounts/update_profile.html', context)
