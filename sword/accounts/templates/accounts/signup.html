@@ -278,7 +278,7 @@
 						</div>
 					</div>
 					<div class="bee-block bee-block-2 bee-form">
-						<form accept-charset="UTF-8" action="{% url 'signup' %}" autocomplete="on" enctype="multipart/form-data" method="post" target="_self">
+						<form action="{% url 'signup' %}" autocomplete="on" enctype="multipart/form-data" method="post" target="_self">
 							{% csrf_token %}
 
 							{% for field in form %}
@@ -307,9 +307,7 @@
 							<div class="bee-form-row">
 								<div class="bee-field bee-field-r0c0m1i5"><label for="r0c0m1i5">Repeat Password</label><input id="r0c0m1i5" name="password2" placeholder="********" required="" type="password2" /></div>
 							</div> -->
-							<div class="bee-form-row">
-								<div class="bee-field bee-field-r0c0m1i6 bee-inline-field"><span class="bee-form-option-wrapper"><input id="r0c0m1i6" name="privacy_policy" required="" type="checkbox" /><label class="inline" for="r0c0m1i6">I agree to the <a href="https://your_privacy_url">Privacy Policy</a></label></span></div>
-							</div>
+							
 							<div class="bee-form-row">
 								<div class="bee-field bee-field-r0c0m1i7">
 									<div class="bee-button-container"><button id="r0c0m1i8" name="submit" type="submit" value="SIGN UP">SIGN UP</button></div>

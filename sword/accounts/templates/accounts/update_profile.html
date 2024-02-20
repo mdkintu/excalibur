@@ -2,10 +2,53 @@
 
 {% block content %}
 <h1>Update Profile</h1>
-<form method="POST" action="{% url 'update_profile' %}">
+<!-- <form method="POST" action="{% url 'update_profile' %}">
     {% csrf_token %}
     {{ form.as_p }}  
     <input type="submit" value="Submit"/> 
-</form>
+</form> -->
+
+
+<div class="bee-page-container">
+    <div class="bee-row bee-row-1">
+        <div class="bee-row-content">
+            <div class="bee-col bee-col-1 bee-col-w12">
+                <div class="bee-block bee-block-1 bee-icons">
+                    <div class="bee-icon bee-icon-last">
+                        <div class="bee-content">
+                            <div class="bee-icon-image"><img height="128px" src="https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/BeeProAgency/1146807_1132469/tergym-high-resolution-logo-black-transparent%20%281%29.png" width="auto" /></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bee-block bee-block-2 bee-form">
+                    <form accept-charset="UTF-8" action="{% url 'update_profile' %}" autocomplete="on" enctype="multipart/form-data" method="post" target="_self">
+                        {% csrf_token %}
+
+                        {% for field in form %}
+                        <div class="bee-form-row">
+                            <div class="bee-field bee-field-r0c0m1i1"><label for="r0c0m1i1">{{field.label}}:</label>{{field}}</div>
+                        </div>
+                        {% endfor %}
+                        
+                        <div class="bee-form-row">
+                            <div class="bee-field bee-field-r0c0m1i5">
+                                <div class="bee-button-container"><button id="r0c0m1i5" name="submit" type="submit" value="SIGN UP">Update</button></div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <div class="bee-row bee-row-2">
+        <div class="bee-row-content">
+            <div class="bee-col bee-col-1 bee-col-w6"></div>
+            <div class="bee-col bee-col-2 bee-col-w6"></div>
+        </div>
+    </div>
+</div>
+
 
 {% endblock %}
+	
