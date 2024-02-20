@@ -771,15 +771,15 @@
 						<nav class="bee-menu"><input class="bee-hamburger-trigger" id="bee-hamburger-memu-r0c1m0" type="checkbox" /><label class="bee-hamburger-controls" for="bee-hamburger-memu-r0c1m0"><span class="bee-hamburger-open"></span><span class="bee-hamburger-close"></span></label>
 							<ul class="bee-horizontal with-bee-hamburger">
                                     {% if request.user.is_authenticated %}
-                                        <li><a href="{% url 'logout' %}" class="nav-link">Logout</a></li>
+									<li><a href="{% url 'dashboard' %}" target="_self" title="">Dashboard</a></li>
+									<li><a href="{% url 'job-search' %}" target="_self" title="">Find a Job</a></li>
+									<li><a href="{% url 'job-post' %}" target="_self" title="">Post a Job</a></li>
                                         <li><a href="{% url 'inbox' %}" target="_self" title="">Inbox</a></li>
-                                        <li><a href="{% url 'job-post' %}" target="_self" title="">Post a Job</a></li>
+										<li><a href="{% url 'logout' %}" class="nav-link">Logout</a></li>
                                     {% else %}
                                         <li><a href="{% url 'signup' %}" class="btn btn-primary">Sign Up</a></li>|
                                         <li><a href="{% url 'login' %}" class="nav-link">Login</a></li>
                                     {% endif %}                                   
-								<li><a href="www.example.com" target="_self" title="">Find a Job</a></li>
-								
 							</ul>
 						</nav>
 					</div>

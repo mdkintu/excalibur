@@ -1,5 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
 <h1>Your Profile</h1>
 <p>Bio: {{ profile.bio }}</p>
+<p>Username: {{ profile.username }}</p>
 <p>Location: {{ profile.location }}</p>
 <p>Birth Date: {{ profile.birth_date }}</p>
-<a href="{% url 'update_profile' %}">Edit Profile</a>
+<button><a href="{% url 'update_profile' %}">Edit Profile</a></button>
+
+{% endblock %}

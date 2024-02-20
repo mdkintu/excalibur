@@ -4,6 +4,7 @@ from django.contrib import messages
 from .forms import SignUpForm, LoginForm
 from django.contrib.auth.decorators import login_required
 from .models import Profile
+from .forms import  ProfileForm
 
 # Create your views here.
 def signup(request):
@@ -63,7 +64,11 @@ def dashboard(request):
 
 @login_required(login_url='login')  # Ensure user is logged in
 def post_job(request):
-    return HttpResponse('This is the  Post Job View')
+    return HttpResponse('This is the Job Post View')
+
+@login_required(login_url='login')  # Ensure user is logged in
+def post_find(request):
+    return HttpResponse('This is the  Job Search View')
 
 @login_required(login_url='login')  # Ensure user is logged in
 def inbox_new(request):
@@ -75,15 +80,26 @@ def view_profile(request):
     context = {'profile': profile}
     return render(request, 'accounts/view_profile.html', context)
 
-@login_required
+@login_required(login_url='login')
 def update_profile(request):
-    if request.method == 'POST':
-        # Process form data to update profile (we'll cover the form soon)
-        profile = request.user.profile 
-        # ... update profile fields ...
-        profile.save()
-        return redirect('view_profile')  # Redirect to view profile after update
-    else:  # GET request
-        profile = request.user.profile
-        context = {'profile': profile}
+    # if request.method == 'POST':
+    #     # Process form data to update profile (we'll cover the form soon)
+    #     profile = request.user.profile 
+    #     # ... update profile fields ...
+    #     profile.save()
+    #     return redirect('view_profile')  # Redirect to view profile after update
+    # else:  # GET request
+    #     profile = request.user.profile
+    #     context = {'profile': profile}
+        profile=request.user.profile
+        form=ProfileForm(instance=profile)
+
+        if request.method=='POST':
+            form=ProfileForm(request.POST, instance=request.user.profile)
+            if form.is_valid():
+                form.save()
+                username = form.cleaned_data.get('username')
+                messages.success(request, 'Profile Updated Successfully for {username}')
+                return redirect('view_profile')
+        context={'form':form}
         return render(request, 'accounts/update_profile.html', context)

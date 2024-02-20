@@ -3,6 +3,8 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import get_user_model
 from django.contrib.auth import authenticate
 from django.contrib.auth.forms import AuthenticationForm
+from .models import Profile
+from django.forms import ModelForm
 
 User = get_user_model()  # Get the current user model (CustomUser)
 
@@ -36,3 +38,8 @@ class LoginForm(AuthenticationForm):
             if self.user_cache is None:
                 raise forms.ValidationError("Invalid username or password")
         return self.cleaned_data
+    
+class ProfileForm(ModelForm):
+    class Meta:
+        model=Profile
+        fields = ['username','email', 'birth_date', 'facebook', 'twitter', 'github', 'bio']  # Exclude the 'user' field
