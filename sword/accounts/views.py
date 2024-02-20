@@ -72,7 +72,8 @@ def post_find(request):
 
 @login_required(login_url='login')  # Ensure user is logged in
 def inbox_new(request):
-    return HttpResponse('This is the new messages View')
+    context={}
+    return render(request, 'accounts/inbox.html', context)
 
 @login_required
 def view_profile(request):
