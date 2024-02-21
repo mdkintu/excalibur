@@ -3,8 +3,9 @@ from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
 from .forms import SignUpForm, LoginForm
 from django.contrib.auth.decorators import login_required
-from .models import Profile
+from .models import Profile, Message
 from .forms import  ProfileForm
+from django.db.models import Q
 
 # Create your views here.
 def signup(request):
@@ -72,8 +73,18 @@ def post_find(request):
 
 @login_required(login_url='login')  # Ensure user is logged in
 def inbox_new(request):
-    context={}
+    profile=request.user.profile
+    messageRequests=profile.messages.all()
+    unreadCount=messageRequests.filter(is_read=False).count
+    context={'messageRequests':messageRequests, 'unreadCount':unreadCount}
     return render(request, 'accounts/inbox.html', context)
+
+@login_required(login_url='login')
+def viewMessage(request, pk):
+    profile=request.user.profile
+    message=profile.message.get(id=pk)
+    context={'message':message}
+    return render (request, 'accounts/message.html', context)
 
 @login_required
 def view_profile(request):

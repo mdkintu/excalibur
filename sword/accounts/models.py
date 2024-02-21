@@ -26,6 +26,7 @@ class Profile(models.Model):
     github = models.URLField(max_length=200, blank=True)
     facebook = models.URLField(max_length=200, blank=True)
     twitter = models.URLField(max_length=200, blank=True)
+    
 
     def __str__(self):
         return f"{self.user}"
