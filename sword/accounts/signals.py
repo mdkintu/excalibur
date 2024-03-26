@@ -3,6 +3,8 @@ from django.db.models.signals import post_save,pre_delete
 from django.dispatch import receiver
 from django.contrib.auth.models import User
 from .models import Profile
+from django.core.mail import send_mail
+from django.conf import settings
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
@@ -12,6 +14,17 @@ def create_user_profile(sender, instance, created, **kwargs):
             email=instance.email,
             username=instance.username,
             name=instance.first_name + ' ' + instance.last_name
+        )
+
+        subject='Welcome to Nsangi Guest Wing'
+        message='We are glad to see to you'
+
+        send_mail(
+            subject,
+            message,
+            settings.EMAIL_HOST_USER, 
+            [instance.email],
+            fail_silently=False,
         )
 
 @receiver(post_save, sender=User)

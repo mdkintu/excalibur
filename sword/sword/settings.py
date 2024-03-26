@@ -102,6 +102,13 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+EMAIL_BACKEND= "django.core.mail.backends.console.EmailBackend" # or console or smtp
+EMAIL_HOST="smtp.gmai.com"
+EMAIL_PORT=587
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = "Nsangi Guest Wing"
+EMAIL_HOST_USER = 'danielmark973@gmail.com'
+EMAIL_HOST_PASSWORD = 'anoqsjahqaggeqgy'
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/

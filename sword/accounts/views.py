@@ -111,7 +111,7 @@ def update_profile(request):
             if form.is_valid():
                 form.save()
                 username = form.cleaned_data.get('username')
-                messages.success(request, 'Profile Updated Successfully for {username}')
+                messages.success(request, 'Profile Updated Successfully for {}'.format(username))
                 return redirect('view_profile')
         context={'form':form}
         return render(request, 'accounts/update_profile.html', context)
